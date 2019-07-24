@@ -1,0 +1,25 @@
+/* pages/order/order.wxss */
+.order{
+  padding: 30rpx;
+}
+.order-header{
+  border-bottom: 1px solid #efefef;
+}
+.num{
+  display: inline-block;
+  width: 160rpx;
+  border: 1px solid #efefef;
+  text-align: center
+}
+.oder-num{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.num-group{
+  display: flex;
+  align-items: center;
+}
+.price{
+  text-align: right;
+}

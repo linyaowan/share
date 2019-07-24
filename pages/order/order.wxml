@@ -1,0 +1,23 @@
+<!--pages/order/order.wxml-->
+<view class="container">
+  <view class='order'>
+    <view class='order-header'>
+      <view>
+        <image style='width:30px;height:30px'></image>
+        <text>厦门少儿图书馆</text>
+      </view>
+      <view class='device-no'>设备号：10292992992991</view>
+    </view>
+    <view>
+      <view>图书消毒</view>
+      <view class='oder-num'>
+        <view class='num-group'>
+          <input type='number' class="weui-input num" bindinput='changenum' value='{{num}}'></input>次
+      X￥ 0.01/次
+        </view>   
+      </view>
+      <view class='price'>实付：￥{{price}}</view>
+    </view>
+  </view>
+   <button type="primary" bindtap="requestPayment" loading="{{loading}}">支付</button>
+</view>
