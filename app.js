@@ -1,25 +1,31 @@
 //app.js
 App({
+  globalData: {
+    userInfo: null,
+    hasLogin: false,
+    openId: null,
+  },
   onLaunch: function () {
+    var self=this;
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    // // 登录
+    // wx.login({
+    //   success: res => {
+    //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
+    //     console.log(res);
+    //   }
+    // })
     // 登录
     wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res);
-      }
-    })
-    // 登录
-    wx.login({
+      
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         console.log(res);
         wx.request({
-          url: "http://zf74vh.natappfree.cc/api/getOpenId",
+          url: "http://keq5i5.natappfree.cc/api/getOpenId",
           data: {
             code: res.code
           },
@@ -29,6 +35,8 @@ App({
             console.log(data);
             if (data.code == 200) {
               console.log("openId:" + data.msg)
+               self.globalData.openId = data.msg
+               console.log(self.globalData.openId)
             }
           }
         })
@@ -54,9 +62,6 @@ App({
         }
       }
     })
-  },
-  globalData: {
-    userInfo: null,
-    hasLogin:false
   }
+
 })

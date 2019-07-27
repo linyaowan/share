@@ -1,5 +1,5 @@
 // pages/order/order.js
-const paymentUrl =''
+const paymentUrl ='http://keq5i5.natappfree.cc/api/payInterface'
 
 var app = getApp()
 Page({
@@ -25,12 +25,13 @@ Page({
     wx.request({
       url: paymentUrl,
       data: {
-        
+        openId: app.globalData.openId
       },
-      method: 'POST',
+      method: 'GET',
       success: function (res) {
         console.log('unified order success, response is:', res)
-        var payargs = res.data.payargs
+        var payargs = res.data.data
+        console.log("test+++++++++++++++++" + payargs)
         wx.requestPayment({
           appId: payargs.appId,
           timeStamp: payargs.timeStamp,

@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/set/set",
+    "pages/index/index",
     "pages/personalCenter/personalCenter",
     "pages/payment/payment",
     "pages/map/map",
     "pages/order/order",
-    "pages/set/set",
-    "pages/index/index",
     "pages/login/login",
     "pages/logs/logs"
     

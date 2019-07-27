@@ -4,12 +4,16 @@ Page({
     // options 中的 scene 需要使用 decodeURIComponent 才能获取到生成二维码时传入的 scene
     var deviceNo = decodeURIComponent(options.deviceNo)
     var type = decodeURIComponent(options.type)
-    if (deviceNo) {
+    if (deviceNo != "undefined") {
       wx.redirectTo({
         url: '/pages/order/order?deviceNo=' + deviceNo + "&type=" + type  
         
       })
       console.log("deviceNo:=============" + deviceNo);
+    }else{
+      wx.switchTab({
+        url: '/pages/index/index'
+      })    
     }
     console.log("deviceNo:=============" + deviceNo);
   }
