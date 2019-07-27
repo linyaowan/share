@@ -13,7 +13,28 @@ App({
         console.log(res);
       }
     })
-    // 获取用户信息
+    // 登录
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log(res);
+        wx.request({
+          url: "http://zf74vh.natappfree.cc/api/getOpenId",
+          data: {
+            code: res.code
+          },
+          method: 'GET',
+          success: function (result) {
+            var data = result.data;
+            console.log(data);
+            if (data.code == 200) {
+              console.log("openId:" + data.msg)
+            }
+          }
+        })
+      }
+    })
+    //获取用户信息
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {

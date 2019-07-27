@@ -1,0 +1,37 @@
+/* pages/payment/payment.wxss */
+.pay-success,.pay-wait,.pay-closed{
+  width: 84%;
+  height: 400rpx;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  margin-top: -200rpx;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.pay-success,.pay-wait{
+  display: none;
+}
+.pay-wait{
+  height: 800rpx;
+  margin-top: -400rpx;
+}
+.pay-info{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20rpx;
+  border-bottom: 1px dashed #000;
+}
+.pay-msg{
+  margin-top: 20rpx;
+  color: #f00;
+}
+.btn-group{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 80rpx;
+}

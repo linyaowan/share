@@ -1,0 +1,26 @@
+<!--pages/payment/payment.wxml-->
+<view class="container">
+  <view class='pay-success' >
+    <image style='width:200rpx;height:200rpx' src="../../images/success.png"></image>
+    <view>支付成功</view>
+    <view>请放置好图书，轻关柜门，欢迎下次使用！</view>
+  </view>
+  <view class='pay-wait' >
+    <image style='width:200rpx;height:200rpx' src="../../images/info.png"></image>
+    <view>支付未完成</view>
+    <view class='pay-info'>
+      <text>图书消毒：  1次</text>
+      <text>实付：￥1</text>
+    </view>
+    <view class='pay-msg'>温馨提示：请在30分钟内完成支付，若未支付订单将自动关闭！</view>
+    <view class='btn-group'>
+      <button>取消订单</button>
+      <button>继续支付</button>
+    </view>
+  </view>
+  <view class='pay-closed'>
+      <image style='width:200rpx;height:200rpx' src="../../images/close.png"></image>
+    <view>订单已关闭</view>
+    <view>支付已超时，订单已自动关闭，请重新下单！</view>
+  </view>
+</view>

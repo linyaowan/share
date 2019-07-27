@@ -7,7 +7,7 @@
 }
 .num{
   display: inline-block;
-  width: 160rpx;
+  width: 120rpx;
   border: 1px solid #efefef;
   text-align: center
 }

@@ -12,12 +12,14 @@
       <view>图书消毒</view>
       <view class='oder-num'>
         <view class='num-group'>
-          <input type='number' class="weui-input num" bindinput='changenum' value='{{num}}'></input>次
-      X￥ 0.01/次
+          <button   bindtap="reducenum" data-num="{{num}}">-</button>
+          <input type='number' class="weui-input num" bindinput='changenum' bindchange='changenum'  value='{{num}}'></input>
+          <button   bindtap="addnum" data-num="{{num}}">+</button>
+          次 x ￥0.01/次     
         </view>   
       </view>
       <view class='price'>实付：￥{{price}}</view>
     </view>
   </view>
-   <button type="primary" bindtap="requestPayment" loading="{{loading}}">支付</button>
+   <button type="primary" bindtap="requestPayment" loading="{{loading}}">立即支付</button>
 </view>

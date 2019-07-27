@@ -1,0 +1,28 @@
+<!--pages/personalCenter/personalCenter.wxml-->
+<view class="container">
+  <view class="user-info">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="navigator-box">
+    <navigator  class="navigator" >
+      <view class="navigator-text">我的订单</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+    <navigator  class="navigator" >
+      <view class="navigator-text">编辑资料</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+    <navigator  class="navigator" >
+      <view class="navigator-text">推荐给好友</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+    <navigator  class="navigator" >
+      <view class="navigator-text">关于我们</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+  </view>
+</view>
+
+
+

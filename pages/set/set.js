@@ -6,8 +6,8 @@ Page({
     var type = decodeURIComponent(options.type)
     if (deviceNo) {
       wx.redirectTo({
-        url: 'pages/order/order?deviceNo=' + deviceNo + "&type=" + type
-
+        url: '/pages/order/order?deviceNo=' + deviceNo + "&type=" + type  
+        
       })
       console.log("deviceNo:=============" + deviceNo);
     }

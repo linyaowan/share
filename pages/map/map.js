@@ -3,6 +3,9 @@ Page({
   data: {
     hasLocation: false,
   },
+  onLoad:function(){
+    this.chooseLocation()
+  },
   chooseLocation: function () {
     var that = this
     wx.chooseLocation({
@@ -14,11 +17,6 @@ Page({
           locationAddress: res.address
         })
       }
-    })
-  },
-  clear: function () {
-    this.setData({
-      hasLocation: false
     })
   }
 })
