@@ -1,5 +1,5 @@
 // pages/order/order.js
-const paymentUrl ='http://keq5i5.natappfree.cc/api/payInterface'
+const paymentUrl ='https://xcx.keeko.ai/api/payInterface'
 
 var app = getApp()
 Page({
@@ -31,7 +31,6 @@ Page({
       success: function (res) {
         console.log('unified order success, response is:', res)
         var payargs = res.data.data
-        console.log("test+++++++++++++++++" + payargs)
         wx.requestPayment({
           appId: payargs.appId,
           timeStamp: payargs.timeStamp,
