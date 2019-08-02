@@ -1,6 +1,8 @@
 {
   "pages": [
-
+    "pages/edit/edit",
+    "pages/adress/adress",
+    
     "pages/set/set",
     "pages/index/index",
     "pages/personalOrder/personalOrder",
@@ -9,8 +11,8 @@
     "pages/map/map",
     "pages/order/order",
     "pages/login/login",
-    "pages/logs/logs",
-    "pages/edit/edit"
+    "pages/logs/logs"
+
   ],
   "window": {
     "navigationBarTitleText": "Demo"
