@@ -1,0 +1,44 @@
+/* pages/personalOrder/personalOrder.wxss */
+.order{
+  width: 94%;
+  margin: 20rpx auto;
+  padding: 20rpx;
+  border: 2rpx solid #000;
+  box-sizing:border-box;
+}
+.order-header{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16rpx;
+  border-bottom:2rpx dashed #000;
+  margin-bottom: 20rpx;
+}
+.order-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.order-image{
+  width: 160rpx;
+  height: 160rpx;
+}
+.order-content-right{
+  width: 460rpx;
+}
+.price,.time{
+  text-align: right;
+}
+.order-foot{
+  display: flex;
+  justify-content: space-between;
+}
+.btn-sm{
+  display: inline-block;
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 13px;
+  margin-left: 20rpx;
+}
+
+

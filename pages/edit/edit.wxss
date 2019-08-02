@@ -1,27 +1,4 @@
-/* pages/personalCenter/personalCenter.wxss */
-.userinfo {  
-  width: 750rpx;  
-  height: 320rpx;   
-  display: flex;  
-  flex-direction: column;  
-  align-items: center;  
-}  
-  
-.userinfo-avatar {  
-  overflow:hidden;  
-  display: block;  
-  width: 160rpx;  
-  height: 160rpx;  
-  margin: 20rpx;  
-  margin-top: 50rpx;  
-  border-radius: 50%;  
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
-}  
-.userinfo-nickname {
-  margin-top: 20rpx;
-  font-size: 38rpx;
-}
-
+/* pages/edit/edit.wxss */
 .navigator-box {
   position: relative;
   line-height: 1.41176471;
@@ -71,4 +48,39 @@
   top: 50%;
   margin-top: -8rpx;
   right: 28rpx;
+}
+
+
+.kind-list-item {
+  margin: 20rpx 0;
+  background-color: #FFFFFF;
+  border-radius: 4rpx;
+
+}
+.kind-list-item:first-child {
+  margin-top: 0;
+}
+.kind-list-text{
+  flex: 1;
+}
+.kind-list-img {
+  width: 60rpx;
+  height: 60rpx;
+}
+.kind-list-item-hd {
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+
+  transition: opacity .3s;
+}
+.kind-list-item-hd-show {
+  opacity: .2;
+}
+.kind-list-item-bd {
+  height: 0;
+  overflow: hidden;
+}
+.kind-list-item-bd-show {
+  height: auto;
 }

@@ -1,14 +1,16 @@
 {
   "pages": [
+
     "pages/set/set",
     "pages/index/index",
+    "pages/personalOrder/personalOrder",
     "pages/personalCenter/personalCenter",
     "pages/payment/payment",
     "pages/map/map",
     "pages/order/order",
     "pages/login/login",
-    "pages/logs/logs"
-    
+    "pages/logs/logs",
+    "pages/edit/edit"
   ],
   "window": {
     "navigationBarTitleText": "Demo"

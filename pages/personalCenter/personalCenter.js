@@ -14,13 +14,13 @@ Page({
     }
 
     function _getUserInfo() {
-      wx.getUserInfo({
-        success: function (res) {
-          that.setData({
-            userInfo: res.userInfo
-          })
-        }
-      })
+      // wx.getUserInfo({
+      //   success: function (res) {
+      //     that.setData({
+      //       userInfo: res.userInfo
+      //     })
+      //   }
+      // })
     }
   }
 })
