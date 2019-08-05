@@ -67,6 +67,18 @@ Page({
         },
         method: 'post',
         success: function (result) {
+          this.setData({
+            mac: app.globalData.mac
+          })
+          if (mac != "undefined") {
+            wx.redirectTo({
+              url: '/pages/order/order?mac=' + mac
+            })
+          } else {
+            wx.switchTab({
+              url: '/pages/index/index'
+            })
+          }
         }
       })
     } else {

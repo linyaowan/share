@@ -1,38 +1,83 @@
 /* pages/payment/payment.wxss */
+.container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .pay-success,.pay-wait,.pay-closed{
   width: 84%;
-  height: 400rpx;
+  height: 480rpx;
   display: flex;
-  position: absolute;
-  top: 50%;
-  left: 8%;
-  margin-top: -200rpx;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
 }
-.pay-success,.pay-wait,.pay-closed{
+.pay-success,.pay-wait{
   display: none;
+}
+.order-img{
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 130rpx;
+}
+
+.order-msg{
+  display:flex;
+  align-items:center;
+  font-size:40rpx;
+  font-weight:500;
+  color: #333;
+  line-height:56rpx;
+}
+.success-text{
+  margin-top: 48rpx;
+  font-size:26rpx;
+  font-weight:500;
 }
 .pay-wait{
   height: 800rpx;
-  margin-top: -400rpx;
 }
 .pay-info{
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding-bottom: 20rpx;
+  align-items: center;
   border-bottom: 1px dashed #000;
 }
-.pay-msg{
+.pay-tip{
   margin-top: 20rpx;
   color: #f00;
   font-size: 24rpx;
+  font-weight:500;
+}
+.price{
+  font-size:52rpx;
+  font-weight:600;
+  color:rgba(51,51,51,1);
 }
 .btn-group{
   width: 100%;
   display: flex;
   justify-content: space-around;
   margin-top: 80rpx;
+}
+.btn-group button{
+  width:240rpx;
+  font-size: 32rpx;
+  height:80rpx;
+  line-height:80rpx;
+  border-radius:51px;
+  opacity:0.6495000000000001;
+  border:2rpx solid rgba(0,0,0,1);
+}
+.btn-group  .pay-for{
+  background: #146FD1;
+  color: #fff;
+  border: none;
+}
+.pay-closed .order-msg{
+  margin-bottom: 50rpx;
 }
