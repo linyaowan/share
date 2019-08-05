@@ -13,7 +13,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.7",
-	"appid": "wxce300e3159dc2b67",
+	"appid": "wxf5ba2f38d41555f9",
 	"projectname": "share",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -42,10 +42,10 @@
 			"current": 0,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "参数",
 					"pathName": "pages/set/set",
-					"query": "deviceNo=12:34&type=1",
+					"query": "mac=01:02:03:04",
 					"scene": null
 				}
 			]

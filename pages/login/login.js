@@ -10,12 +10,16 @@ Page({
 
   onLoad() {
     this.setData({
-      hasLogin: app.globalData.hasLogin
+      hasLogin: app.globalData.hasLogin,
+      mac: app.globalData.mac
     })
+    this.login();
   },
   data: {},
   login() {
     const that = this
+    
+    var mac = that.data.mac;
     // 登录
     // wx.login({
     //   success: res => {
@@ -39,9 +43,22 @@ Page({
           method: 'GET',
           success: function (result) {
             var data = result.data;
+            app.globalData.openId = data.msg 
             if (data.code == 200) {
-              self.globalData.openId = data.msg      
-            }
+              var status = '1'
+              if (status=='0'){
+                  //有用户信息 跳转订单页面
+                if (mac != "undefined") {
+                  wx.redirectTo({
+                    url: '/pages/order/order?mac=' + mac
+                  })
+                } else {
+                  wx.switchTab({
+                    url: '/pages/index/index'
+                  })
+                }                 
+              }                           
+            }    
           }
         })
       }
@@ -49,27 +66,29 @@ Page({
   },
 
   selfGetInfo(e) {
-    // this.login();
+     var that=this;
+     var mac=this.data.mac;
     //出现授权弹窗，用户点了允许
     if (e.detail.userInfo) {
       app.globalData.userinfo = e.detail.userInfo;
       this.setData({
         avatarUrl: e.detail.userInfo.avatarUrl
       })
+      // console.log("jahsjdkaskdhkash++++++++++"+this.globalData.openId)
       wx.request({
         url: "https://xcx.keeko.ai/api/saveUserInfo",
         data: {
-          avatarUrl: e.detail.userInfo.avatarUrl,
-          userNickName: e.detail.userInfo.userNickName,
-          userGender: e.detail.userInfo.userGender,
-          userCity: e.detail.userInfo.userCity,
-          userProvince: e.detail.userInfo.userProvince
+          userAvatarUrl: e.detail.userInfo.avatarUrl,
+          userNickName: e.detail.userInfo.nickName,
+          userGender: e.detail.userInfo.gender,
+          userCity: e.detail.userInfo.city,
+          userProvince: e.detail.userInfo.province,
+          openId:app.globalData.openId
+
         },
         method: 'post',
         success: function (result) {
-          this.setData({
-            mac: app.globalData.mac
-          })
+          console.log(mac)
           if (mac != "undefined") {
             wx.redirectTo({
               url: '/pages/order/order?mac=' + mac

@@ -9,8 +9,7 @@ Page({
   },
   onLoad: function (options) {
     this.setData({
-      "deviceNo": options.deviceNo,
-      "type": options.type
+      "mac": options.mac
     })
     console.log(options)
   },
@@ -32,7 +31,6 @@ Page({
         console.log('unified order success, response is:', res)
         var payargs = res.data.data
         wx.requestPayment({
-          appId: payargs.appId,
           timeStamp: payargs.timeStamp,
           nonceStr: payargs.nonceStr,
           package: payargs.package,
