@@ -1,2 +1,5 @@
 /**app.wxss**/
 @import 'style/weui.wxss';
+page{
+  background: #efefef;
+}

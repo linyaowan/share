@@ -21,6 +21,6 @@
   <view class='pay-closed'>
       <image style='width:200rpx;height:200rpx' src="../../images/close.png"></image>
     <view>订单已关闭</view>
-    <view>支付已超时，订单已自动关闭，请重新下单！</view>
+    <view class='pay-msg'>支付已超时，订单已自动关闭，请重新下单！</view>
   </view>
 </view>

@@ -11,7 +11,7 @@
   align-items: center;
   overflow: hidden;
 }
-.pay-success,.pay-wait{
+.pay-success,.pay-wait,.pay-closed{
   display: none;
 }
 .pay-wait{
@@ -28,6 +28,7 @@
 .pay-msg{
   margin-top: 20rpx;
   color: #f00;
+  font-size: 24rpx;
 }
 .btn-group{
   width: 100%;

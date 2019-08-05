@@ -1,23 +1,17 @@
 <!--pages/login/login.wxml-->
 <view class="container">
-  <template is="head" data="{{title: 'Login'}}"/>
-
-  <view class="page-body">
-    <view class="page-section">
-      <block wx:if="{{hasLogin === true}}">
-        <text class="page-body-title">已登录</text>
-        <text class="page-body-text">每个微信号中仅需登录 1 次，后续每次进入页面即可根据微信 id 自动拉取用户信息</text>
-               
-          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
-          <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-        
-      </block>
-      <block wx:if="{{hasLogin === false}}">
-        <text class="page-body-text">每个微信号中仅需登录一次</text>
-        <button class="page-body-button" type="primary" bindtap="login">微信登录</button>
-      </block>
+  <view class='get-info'>
+    <image src='../../images/info.png' class='logo'></image>
+    <view class='get-title'>授权XXXXX获取以下权限为您服务</view>
+    <view class='get-item'>
+      • 需获取您的微信公开信息（昵称，头像等）
     </view>
+    <view class='get-item'>
+      • 需获取您的地理位置
+    </view>
+    <view class='get-tip'>若您不同意授权，则无法正常使用该小程序，退出即可</view>
   </view>
-
-  <template is="foot" />
+  <view>
+    <button class='get-userinfo' bindgetuserinfo='selfGetInfo' open-type="getUserInfo">授权登录</button>
+  </view>
 </view>
