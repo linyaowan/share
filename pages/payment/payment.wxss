@@ -14,7 +14,7 @@
   align-items: center;
   overflow: hidden;
 }
-.pay-success,.pay-wait{
+.pay-wait,.pay-closed{
   display: none;
 }
 .order-img{

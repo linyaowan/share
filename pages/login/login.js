@@ -1,12 +1,6 @@
 const app = getApp()
 
 Page({
-  onShareAppMessage() {
-    return {
-      title: '微信登录',
-      path: 'pages/login/login'
-    }
-  },
 
   onLoad() {
     this.setData({
@@ -70,11 +64,8 @@ Page({
      var mac=this.data.mac;
     //出现授权弹窗，用户点了允许
     if (e.detail.userInfo) {
-      app.globalData.userinfo = e.detail.userInfo;
-      this.setData({
-        avatarUrl: e.detail.userInfo.avatarUrl
-      })
-      // console.log("jahsjdkaskdhkash++++++++++"+this.globalData.openId)
+      app.globalData.userinfo = e.detail.userInfo;     
+      console.log("jahsjdkaskdhkash++++++++++" + e.detail.userInfo.province)
       wx.request({
         url: "https://xcx.keeko.ai/api/saveUserInfo",
         data: {

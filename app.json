@@ -1,14 +1,17 @@
 {
   "pages": [
-        "pages/payment/payment",
+        "pages/personalCenter/personalCenter",
+    "pages/payment/payment",
+        "pages/set/set",
+        
     "pages/order/order",
     "pages/login/login",
     "pages/edit/edit",
     "pages/adress/adress",
-    "pages/set/set",
+
     "pages/index/index",
     "pages/personalOrder/personalOrder",
-    "pages/personalCenter/personalCenter",
+
 
     "pages/map/map",
     "pages/logs/logs"

@@ -53,6 +53,8 @@
 }
 .navigator-text {
   flex: 1;
+  display: flex;
+  align-items: center;
 }
 .navigator-arrow {
   padding-right: 26rpx;
@@ -71,4 +73,25 @@
   top: 50%;
   margin-top: -8rpx;
   right: 28rpx;
+}
+.payfor{
+  width:682rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  margin: 110rpx auto 0;
+  background:rgba(20,111,209,1);
+  color: #fff;
+  box-shadow:0px 0px 40rpx 0px rgba(0,0,0,0.25);
+  border-radius:63rpx;
+  text-align: center;
+  
+}
+.list-img{
+  width: 60rpx;
+  height: 70rpx;
+  margin-right: 20rpx;
+}
+.list-round{
+  width: 60rpx;
+  height: 60rpx;
 }

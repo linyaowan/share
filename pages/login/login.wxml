@@ -12,6 +12,6 @@
     <view class='get-tip'>若您不同意授权，则无法正常使用该小程序，退出即可</view>
   </view>
   <view>
-    <button class='get-userinfo' bindgetuserinfo='selfGetInfo' open-type="getUserInfo">授权登录</button>
+    <button class='get-userinfo' bindgetuserinfo='selfGetInfo' lang="zh_CN" open-type="getUserInfo">授权登录</button>
   </view>
 </view>
