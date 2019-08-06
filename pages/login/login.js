@@ -37,21 +37,19 @@ Page({
           method: 'GET',
           success: function (result) {
             var data = result.data;
-            app.globalData.openId = data.msg 
-            if (data.code == 200) {
-              var status = '1'
-              if (status=='0'){
-                  //有用户信息 跳转订单页面
-                if (mac != "undefined") {
-                  wx.redirectTo({
-                    url: '/pages/order/order?mac=' + mac
-                  })
-                } else {
-                  wx.switchTab({
-                    url: '/pages/index/index'
-                  })
-                }                 
-              }                           
+            app.globalData.openId = data.data.openId 
+            if (data.code == 200 && data.data.nickname) {
+                //有用户信息 跳转订单页面
+              if (mac != "undefined") {
+                wx.redirectTo({
+                  url: '/pages/order/order?mac=' + mac
+                })
+              } else {
+                wx.switchTab({
+                  url: '/pages/index/index'
+                })
+              }                 
+                                        
             }    
           }
         })
@@ -60,8 +58,9 @@ Page({
   },
 
   selfGetInfo(e) {
-     var that=this;
-     var mac=this.data.mac;
+    var mac=this.data.mac;
+    console.log("data==============" + app.globalData.openId);
+    console.log("data==============" + mac);
     //出现授权弹窗，用户点了允许
     if (e.detail.userInfo) {
       app.globalData.userinfo = e.detail.userInfo;     
