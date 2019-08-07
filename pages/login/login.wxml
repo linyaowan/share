@@ -1,5 +1,5 @@
 <!--pages/login/login.wxml-->
-<view class="container" hidden="{{hasInfo}}" >
+<view class="container" wx:if="{{hasInfo}}" >
   <view class='login'>
     <view class='get-info' >
     <image src='../../images/info.png' class='logo'></image>

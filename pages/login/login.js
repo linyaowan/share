@@ -8,7 +8,7 @@ Page({
     this.setData({
       hasLogin: app.globalData.hasLogin,
       mac: app.globalData.mac,
-      hasInfo:true
+      hasInfo:false
     })
     this.login();
   },
@@ -29,7 +29,7 @@ Page({
       success: res => {
         app.globalData.hasLogin = true
         that.setData({
-          hasLogin: true
+          hasLogin: false
         })
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
@@ -40,15 +40,15 @@ Page({
           method: 'GET',
           success: function (result) {
             var data = result.data;
-            data.data.nickname='';
+            // data.data.nickname='';
             if (data.data.nickname){
               that.setData({
-                hasInfo:true
+                hasInfo:false
               })
               console.log(that.data.hasInfo)
             }else{
               that.setData({
-                hasInfo:false
+                hasInfo:true
               })
               console.log(that.data.hasInfo)
             }
