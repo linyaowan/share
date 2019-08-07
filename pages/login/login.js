@@ -8,7 +8,7 @@ Page({
     this.setData({
       hasLogin: app.globalData.hasLogin,
       mac: app.globalData.mac,
-      hasInfo:1
+      hasInfo:true
     })
     this.login();
   },
@@ -40,15 +40,15 @@ Page({
           method: 'GET',
           success: function (result) {
             var data = result.data;
-            // data.data.nickname='';
+            data.data.nickname='';
             if (data.data.nickname){
               that.setData({
-                hasInfo:1
+                hasInfo:true
               })
               console.log(that.data.hasInfo)
             }else{
               that.setData({
-                hasInfo:0
+                hasInfo:false
               })
               console.log(that.data.hasInfo)
             }
