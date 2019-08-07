@@ -2,10 +2,13 @@ const app = getApp()
 
 Page({
 
-  onLoad() {
+  onLoad:function(options) {
+    var mac = decodeURIComponent(options.mac)
+    app.globalData.mac = mac;
     this.setData({
       hasLogin: app.globalData.hasLogin,
-      mac: app.globalData.mac
+      mac: app.globalData.mac,
+      hasInfo:1
     })
     this.login();
   },
@@ -30,13 +33,25 @@ Page({
         })
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
-          url: "https://xcx.keeko.ai/api/getOpenId",
+          url: "http://7h8qqc.natappfree.cc/api/getOpenId",
           data: {
             code: res.code
           },
           method: 'GET',
           success: function (result) {
             var data = result.data;
+            // data.data.nickname='';
+            if (data.data.nickname){
+              that.setData({
+                hasInfo:1
+              })
+              console.log(that.data.hasInfo)
+            }else{
+              that.setData({
+                hasInfo:0
+              })
+              console.log(that.data.hasInfo)
+            }
             app.globalData.openId = data.data.openId 
             if (data.code == 200 && data.data.nickname) {
                 //有用户信息 跳转订单页面
@@ -58,15 +73,16 @@ Page({
   },
 
   selfGetInfo(e) {
+    var that=this;
     var mac=this.data.mac;
     console.log("data==============" + app.globalData.openId);
     console.log("data==============" + mac);
     //出现授权弹窗，用户点了允许
     if (e.detail.userInfo) {
       app.globalData.userinfo = e.detail.userInfo;     
-      console.log("jahsjdkaskdhkash++++++++++" + e.detail.userInfo.province)
+      
       wx.request({
-        url: "https://xcx.keeko.ai/api/saveUserInfo",
+        url: "http://7h8qqc.natappfree.cc/api/saveUserInfo",
         data: {
           userAvatarUrl: e.detail.userInfo.avatarUrl,
           userNickName: e.detail.userInfo.nickName,
@@ -78,7 +94,6 @@ Page({
         },
         method: 'post',
         success: function (result) {
-          console.log(mac)
           if (mac != "undefined") {
             wx.redirectTo({
               url: '/pages/order/order?mac=' + mac

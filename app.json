@@ -1,11 +1,12 @@
 {
   "pages": [
+        "pages/login/login",
         "pages/personalCenter/personalCenter",
     "pages/payment/payment",
-        "pages/set/set",
+        
         
     "pages/order/order",
-    "pages/login/login",
+
     "pages/edit/edit",
     "pages/adress/adress",
 

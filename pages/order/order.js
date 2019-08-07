@@ -1,5 +1,5 @@
 // pages/order/order.js
-const paymentUrl ='https://xcx.keeko.ai/api/payInterface'
+const paymentUrl ='http://7h8qqc.natappfree.cc/api/payInterface'
 
 var app = getApp()
 Page({
@@ -11,11 +11,11 @@ Page({
     this.setData({
       "mac": options.mac
     })
-    console.log(options)
+
   },
   requestPayment: function () {
     var self = this
-
+    var mac=this.data.mac
     self.setData({
       loading: true,
     })
@@ -29,13 +29,48 @@ Page({
       method: 'GET',
       success: function (res) {
         console.log('unified order success, response is:', res)
-        var payargs = res.data.data
+        var payargs = res.data.data;
+        var pg = payargs.pg;
         wx.requestPayment({
           timeStamp: payargs.timeStamp,
           nonceStr: payargs.nonceStr,
           package: payargs.package,
           signType: payargs.signType,
-          paySign: payargs.paySign
+          paySign: payargs.paySign,
+          success(res) {
+            wx.request({
+              url: 'http://7h8qqc.natappfree.cc/api/saveOrder',
+              data: {
+                openId: app.globalData.openId,
+                pg: pg,
+                mac: mac,
+                status: '0',
+                amountPayable:1,
+                paymentAmount:1
+              },
+              method: 'POST',
+              success: function (data) {
+                console.log("data==============="+data);
+              }
+            })   
+          },
+          fail(res) {
+            wx.request({
+              url: 'http://7h8qqc.natappfree.cc/api/saveOrder',
+              data: {
+                openId: app.globalData.openId,
+                pg: pg,
+                mac:mac,
+                status: '1',
+                amountPayable: 1,
+                paymentAmount: 1
+              },
+              method: 'POST',
+              success: function (data) {
+                console.log("data==============="+data.code);
+              }
+            })
+          }
         })
 
         self.setData({
