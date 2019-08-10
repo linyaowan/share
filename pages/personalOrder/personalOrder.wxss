@@ -36,21 +36,18 @@
   width:136rpx;
   height:136rpx;
 }
-
 .order-content-right {
   width:460rpx;
 }
-
-
-
+.station{
+  color: #666;
+}
 .order-foot {
   display:flex;
   justify-content:space-between;
   align-items: center;
   margin-top: 50rpx;
 }
-
-
 .price{
   position: absolute;
   right: 40rpx;

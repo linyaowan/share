@@ -33,7 +33,7 @@ Page({
         })
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
-          url: "http://7h8qqc.natappfree.cc/api/getOpenId",
+          url: "http://u9z2jv.natappfree.cc/api/getOpenId",
           data: {
             code: res.code
           },
@@ -45,12 +45,10 @@ Page({
               that.setData({
                 hasInfo:false
               })
-              console.log(that.data.hasInfo)
             }else{
               that.setData({
                 hasInfo:true
               })
-              console.log(that.data.hasInfo)
             }
             app.globalData.openId = data.data.openId 
             if (data.code == 200 && data.data.nickname) {
@@ -82,7 +80,7 @@ Page({
       app.globalData.userinfo = e.detail.userInfo;     
       
       wx.request({
-        url: "http://7h8qqc.natappfree.cc/api/saveUserInfo",
+        url: "http://u9z2jv.natappfree.cc/api/saveUserInfo",
         data: {
           userAvatarUrl: e.detail.userInfo.avatarUrl,
           userNickName: e.detail.userInfo.nickName,

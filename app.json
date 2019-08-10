@@ -1,21 +1,18 @@
 {
   "pages": [
-        "pages/login/login",
-        "pages/personalCenter/personalCenter",
     "pages/payment/payment",
-        
-        
+    "pages/personalCenter/personalCenter",
+    "pages/login/login",
     "pages/order/order",
-
     "pages/edit/edit",
     "pages/adress/adress",
-
     "pages/index/index",
     "pages/personalOrder/personalOrder",
-
-
     "pages/map/map",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/shareMessage/shareMessage",
+    "pages/about/about",
+    "pages/disinfectStatus/disinfectStatus"
   ],
   "window": {
     "navigationBarTitleText": "Demo"
@@ -27,12 +24,6 @@
         "iconPath": "images/icon_tabbar.png",
         "pagePath": "pages/map/map",
         "text": "附近网点"
-      },
-      {
-        "selectedIconPath": "images/icon_tabbar.png",
-        "iconPath": "images/icon_tabbar.png",
-        "pagePath": "pages/index/index",
-        "text": "扫一扫支付"
       },
       {
         "selectedIconPath": "images/icon_tabbar.png",

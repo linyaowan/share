@@ -4,6 +4,7 @@ App({
     userInfo: null,
     hasLogin: false,
     openId: null,
+    orderNo:''
   },
   onLaunch: function () {
     var self=this;

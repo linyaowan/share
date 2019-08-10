@@ -8,6 +8,11 @@
   line-height: 1.41176471;
   font-size: 34rpx;
   transition: .3s;
+  margin: 36rpx;
+  padding: 20rpx 0;
+  background: #fff;
+  box-shadow:0px 0px 40rpx 0px rgba(0,0,0,0.1);
+  border-radius:40rpx;
 }
 .navigator-box-show {
   opacity: 1;

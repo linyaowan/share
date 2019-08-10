@@ -1,0 +1,2 @@
+<!--pages/disinfectStatus/disinfectStatus.wxml-->
+{{msg}}

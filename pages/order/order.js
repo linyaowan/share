@@ -1,5 +1,5 @@
 // pages/order/order.js
-const paymentUrl ='http://7h8qqc.natappfree.cc/api/payInterface'
+const paymentUrl ='http://u9z2jv.natappfree.cc/api/payInterface'
 
 var app = getApp()
 Page({
@@ -31,6 +31,9 @@ Page({
         console.log('unified order success, response is:', res)
         var payargs = res.data.data;
         var pg = payargs.pg;
+        //测试 orderNo数据
+        app.globalData.orderNo = '1sdk85fi4h';
+        // app.globalData.orderNo=pg;
         wx.requestPayment({
           timeStamp: payargs.timeStamp,
           nonceStr: payargs.nonceStr,
@@ -39,7 +42,7 @@ Page({
           paySign: payargs.paySign,
           success(res) {
             wx.request({
-              url: 'http://7h8qqc.natappfree.cc/api/saveOrder',
+              url: 'http://u9z2jv.natappfree.cc/api/saveOrder',
               data: {
                 openId: app.globalData.openId,
                 pg: pg,
@@ -50,13 +53,16 @@ Page({
               },
               method: 'POST',
               success: function (data) {
-                console.log("data==============="+data);
+                wx.redirectTo({
+                  url: '/pages/payment/payment?payStatus=1'
+                })
               }
-            })   
+            })
+
           },
           fail(res) {
             wx.request({
-              url: 'http://7h8qqc.natappfree.cc/api/saveOrder',
+              url: 'http://u9z2jv.natappfree.cc/api/saveOrder',
               data: {
                 openId: app.globalData.openId,
                 pg: pg,
@@ -67,7 +73,9 @@ Page({
               },
               method: 'POST',
               success: function (data) {
-                console.log("data==============="+data.code);
+                wx.redirectTo({
+                  url: '/pages/payment/payment?payStatus=0'
+                })
               }
             })
           }

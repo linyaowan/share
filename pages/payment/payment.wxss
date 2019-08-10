@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #333;
 }
 .pay-success,.pay-wait,.pay-closed{
   width: 84%;
@@ -14,22 +15,21 @@
   align-items: center;
   overflow: hidden;
 }
-.pay-wait,.pay-closed{
-  display: none;
-}
 .order-img{
   width: 200rpx;
   height: 200rpx;
-  margin-bottom: 130rpx;
+  margin-bottom: 30rpx;
 }
 
 .order-msg{
   display:flex;
   align-items:center;
   font-size:40rpx;
-  font-weight:500;
-  color: #333;
+  font-weight:bold;
+  color: #000;
   line-height:56rpx;
+  margin-bottom:65rpx;
+
 }
 .success-text{
   margin-top: 48rpx;
@@ -76,7 +76,7 @@
 .btn-group  .pay-for{
   background: #146FD1;
   color: #fff;
-  border: none;
+  border:2rpx solid #146FD1;
 }
 .pay-closed .order-msg{
   margin-bottom: 50rpx;
