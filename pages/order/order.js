@@ -27,10 +27,9 @@ Page({
       method: 'GET',
       success: function (res) {
         var payargs = res.data.data;
-        var pg = payargs.pg;
+        var orderNo = payargs.orderNo;
         //测试 orderNo数据
-        app.globalData.orderNo = '1sdk85fi4h';
-        // app.globalData.orderNo=pg;
+        app.globalData.orderNo = orderNo;
         wx.requestPayment({
           timeStamp: payargs.timeStamp,
           nonceStr: payargs.nonceStr,
@@ -42,7 +41,7 @@ Page({
               url: app.globalData.base+'/api/saveOrder',
               data: {
                 openId: app.globalData.openId,
-                pg: pg,
+                orderNo: orderNo,
                 mac: mac,
                 status: '0',
                 amountPayable:1,
@@ -62,7 +61,7 @@ Page({
               url: app.globalData.base+'/api/saveOrder',
               data: {
                 openId: app.globalData.openId,
-                pg: pg,
+                orderNo: orderNo,
                 mac:mac,
                 status: '1',
                 amountPayable: 1,
