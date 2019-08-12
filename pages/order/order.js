@@ -1,6 +1,4 @@
 // pages/order/order.js
-const paymentUrl ='http://u9z2jv.natappfree.cc/api/payInterface'
-
 var app = getApp()
 Page({
   data:{
@@ -22,13 +20,12 @@ Page({
     // 此处需要先调用wx.login方法获取code，然后在服务端调用微信接口使用code换取下单用户的openId
     // 具体文档参考https://mp.weixin.qq.com/debug/wxadoc/dev/api/api-login.html?t=20161230#wxloginobject
     wx.request({
-      url: paymentUrl,
+      url: app.globalData.base + '/api/payInterface',
       data: {
         openId: app.globalData.openId
       },
       method: 'GET',
       success: function (res) {
-        console.log('unified order success, response is:', res)
         var payargs = res.data.data;
         var pg = payargs.pg;
         //测试 orderNo数据
@@ -42,7 +39,7 @@ Page({
           paySign: payargs.paySign,
           success(res) {
             wx.request({
-              url: 'http://u9z2jv.natappfree.cc/api/saveOrder',
+              url: app.globalData.base+'/api/saveOrder',
               data: {
                 openId: app.globalData.openId,
                 pg: pg,
@@ -62,7 +59,7 @@ Page({
           },
           fail(res) {
             wx.request({
-              url: 'http://u9z2jv.natappfree.cc/api/saveOrder',
+              url: app.globalData.base+'/api/saveOrder',
               data: {
                 openId: app.globalData.openId,
                 pg: pg,

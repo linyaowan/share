@@ -7,24 +7,24 @@ Page({
       // payStatus: payStatus
       payStatus:1
     })
-    console.log(this.data.payStatus)
   },
   data: {},
   requestPayment: function () {
-    var self = this
+    var that = this
     var mac = this.data.mac
-    self.setData({
+    that.setData({
       loading: true,
     })
     // 此处需要先调用wx.login方法获取code，然后在服务端调用微信接口使用code换取下单用户的openId
     // 具体文档参考https://mp.weixin.qq.com/debug/wxadoc/dev/api/api-login.html?t=20161230#wxloginobject
     wx.request({
-      url:'http://u9z2jv.natappfree.cc/api/payInterface',
+      url:app.globalData.base+'/api/payInterface',
       data: {
         openId: app.globalData.openId
       },
       method: 'GET',
       success: function (res) {
+        
         var payargs = res.data.data;
         var pg = payargs.pg;
         wx.requestPayment({
@@ -35,7 +35,7 @@ Page({
           paySign: payargs.paySign,
           success(res) {
             wx.request({
-              url: 'http://u9z2jv.natappfree.cc/api/saveOrder',
+              url: app.globalData.base+'/api/saveOrder',
               data: {
                 openId: app.globalData.openId,
                 pg: pg,
@@ -56,7 +56,7 @@ Page({
           },
           fail(res) {
             wx.request({
-              url: 'http://u9z2jv.natappfree.cc/api/saveOrder',
+              url: app.globalData.base+'/api/saveOrder',
               data: {
                 openId: app.globalData.openId,
                 pg: pg,
@@ -90,8 +90,12 @@ Page({
     })
   },
   startDisinfect:function(){
+    var that=this;
+    that.setData({
+      loading: true,
+    })
     wx.request({
-      url: 'http://u9z2jv.natappfree.cc/push/disinfectInstruction',
+      url: app.globalData.base+'/push/disinfectInstruction',
       data: {
         openId: app.globalData.openId,
         orderNo: app.globalData.orderNo,
@@ -99,6 +103,9 @@ Page({
       },
       method: 'POST',
       success: function (res) {
+        that.setData({
+          loading: true,
+        })
         console.log("data123+++++++++++===============" + res.data.code);
         //测试 消毒推送后的查询
           wx.redirectTo({

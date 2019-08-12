@@ -33,7 +33,7 @@ Page({
         })
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
-          url: "http://u9z2jv.natappfree.cc/api/getOpenId",
+          url: app.globalData.base +'/api/getOpenId',
           data: {
             code: res.code
           },
@@ -80,7 +80,7 @@ Page({
       app.globalData.userinfo = e.detail.userInfo;     
       
       wx.request({
-        url: "http://u9z2jv.natappfree.cc/api/saveUserInfo",
+        url: app.globalData.base+'/api/saveUserInfo',
         data: {
           userAvatarUrl: e.detail.userInfo.avatarUrl,
           userNickName: e.detail.userInfo.nickName,

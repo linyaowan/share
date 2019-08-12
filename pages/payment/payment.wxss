@@ -9,9 +9,10 @@
 }
 .pay-success,.pay-wait,.pay-closed{
   width: 84%;
-  height: 480rpx;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   overflow: hidden;
 }
@@ -80,4 +81,13 @@
 }
 .pay-closed .order-msg{
   margin-bottom: 50rpx;
+}
+.startDisinfect{
+  width:100%;
+  height:100rpx;
+  margin-top: 80rpx;
+  background:rgba(20,111,209,1);
+  color: #fff;
+  box-shadow:0px 0px 40rpx 0px rgba(0,0,0,0.25);
+  border-radius:63rpx;
 }

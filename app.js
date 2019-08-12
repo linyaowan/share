@@ -4,7 +4,8 @@ App({
     userInfo: null,
     hasLogin: false,
     openId: null,
-    orderNo:''
+    orderNo:'',
+    base:'http://gqwqfw.natappfree.cc'
   },
   onLaunch: function () {
     var self=this;
