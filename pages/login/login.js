@@ -73,12 +73,9 @@ Page({
   selfGetInfo(e) {
     var that=this;
     var mac=this.data.mac;
-    console.log("data==============" + app.globalData.openId);
-    console.log("data==============" + mac);
     //出现授权弹窗，用户点了允许
     if (e.detail.userInfo) {
       app.globalData.userinfo = e.detail.userInfo;     
-      
       wx.request({
         url: app.globalData.base+'/api/saveUserInfo',
         data: {

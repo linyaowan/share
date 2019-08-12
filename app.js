@@ -5,7 +5,15 @@ App({
     hasLogin: false,
     openId: null,
     orderNo:'',
+<<<<<<< HEAD
     base:'http://gqwqfw.natappfree.cc'
+=======
+<<<<<<< HEAD
+    base:'https://xcx.keeko.ai'
+=======
+    base:'http://gqwqfw.natappfree.cc'
+>>>>>>> 1.1
+>>>>>>> 1.1
   },
   onLaunch: function () {
     var self=this;

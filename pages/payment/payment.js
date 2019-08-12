@@ -46,7 +46,6 @@ Page({
               },
               method: 'POST',
               success: function (data) {
-                console.log("data===============" + data);
                 wx.redirectTo({
                   url: '/pages/payment/payment?payStatus=1'
                 })
@@ -106,7 +105,13 @@ Page({
         that.setData({
           loading: true,
         })
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 1.1
         console.log("data123+++++++++++===============" + res.data.code);
+>>>>>>> 1.1
         //测试 消毒推送后的查询
           wx.redirectTo({
             url: '/pages/disinfectStatus/disinfectStatus'

@@ -13,7 +13,15 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.7",
+<<<<<<< HEAD
 	"appid": "wxce300e3159dc2b67",
+=======
+<<<<<<< HEAD
+	"appid": "wxf5ba2f38d41555f9",
+=======
+	"appid": "wxce300e3159dc2b67",
+>>>>>>> 1.1
+>>>>>>> 1.1
 	"projectname": "share",
 	"debugOptions": {
 		"hidedInDevtools": []
