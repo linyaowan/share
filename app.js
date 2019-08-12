@@ -6,13 +6,19 @@ App({
     openId: null,
     orderNo:'',
 <<<<<<< HEAD
+<<<<<<< HEAD
     base:'http://gqwqfw.natappfree.cc'
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 1.1
     base:'https://xcx.keeko.ai'
 =======
     base:'http://gqwqfw.natappfree.cc'
 >>>>>>> 1.1
+<<<<<<< HEAD
+>>>>>>> 1.1
+=======
 >>>>>>> 1.1
   },
   onLaunch: function () {
